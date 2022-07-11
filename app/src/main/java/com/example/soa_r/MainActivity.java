@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         pass = findViewById(R.id.contraseña);
 
         registro = findViewById(R.id.registro);
-        acceso = findViewById(R.id.acceso);
+        //acceso = findViewById(R.id.acceso);
 
         registro.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this, pantallaP.class));
             finish();
         }
+    }
+
+    public void Registrase (View view) {
+        Intent hom = new Intent(this, pantallaP.class);
+        startActivity(hom);
     }
 
 }
