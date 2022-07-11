@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/52775/OneDrive/Documentos/GitHub/SOA-R/app/src/main/res/layout/activity_registro_ropa.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Jesus/OneDrive/Documentos/GitHub/SOA-R/app/src/main/res/layout/activity_main.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/Jesus/OneDrive/Documentos/GitHub/SOA-R/app/src/main/res/layout/activity_pantalla_p.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/Jesus/OneDrive/Documentos/GitHub/SOAProyecto/SOAR/app/src/main/res/layout/activity_main.xml" value="0.24682971014492755" />
@@ -12,7 +11,8 @@
         <entry key="..\:/Users/Jesus/OneDrive/Documentos/GitHub/SOAR/app/src/main/res/layout/activity_pantalla_p.xml" value="0.24682971014492755" />
         <entry key="..\:/Users/emma_/OneDrive/Documentos/AndroidProyectos/SOAR/app/src/main/res/drawable/button_rounded.xml" value="0.2985" />
         <entry key="..\:/Users/emma_/OneDrive/Documentos/AndroidProyectos/SOAR/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/emma_/OneDrive/Documentos/AndroidProyectos/SOAR/app/src/main/res/layout/activity_pantalla_p.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/emma_/OneDrive/Documentos/AndroidProyectos/SOAR/app/src/main/res/layout/activity_pantalla_p.xml" value="0.33" />
+        <entry key="..\:/Users/emma_/OneDrive/Documentos/AndroidProyectos/SOAR/app/src/main/res/layout/activity_registro_ropa.xml" value="0.23020833333333332" />
       </map>
     </option>
   </component>
