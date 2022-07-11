@@ -1,16 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".registroRopa">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/fondo"
+android:orientation="vertical"
+tools:context=".registroRopa">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="211dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="238dp">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        app:srcCompat="?attr/actionModePasteDrawable" />
+</LinearLayout>
+
+<EditText
+    android:id="@+id/Talla"
+    android:layout_width="287dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:hint="Talla"
+    android:textColorHint="@color/black"
+    android:inputType="text"
+    android:textSize="34sp" />
+
+<EditText
+    android:id="@+id/Genero"
+    android:layout_width="286dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:hint="Genero"
+    android:textColorHint="@color/black"
+    android:inputType="numberPassword"
+    android:textSize="34sp" />
+<EditText
+    android:id="@+id/Estado"
+    android:layout_width="287dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:hint="Estado"
+    android:textColorHint="@color/black"
+    android:inputType="text"
+    android:textSize="34sp" />
+
+<EditText
+    android:id="@+id/Tipo"
+    android:layout_width="286dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:hint="Tipo"
+    android:textColorHint="@color/black"
+    android:inputType="numberPassword"
+    android:textSize="34sp" />
+
+<Button
+    android:id="@+id/Registrar"
+    android:layout_width="151dp"
+    android:layout_height="73dp"
+    android:layout_gravity="center"
+    android:text="Registrar" />
+</LinearLayout>
