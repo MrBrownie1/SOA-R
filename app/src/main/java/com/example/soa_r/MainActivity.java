@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         autenticacion=FirebaseAuth.getInstance();
 
-        Button registro;
+        Button registro, acceso;
         EditText email, pass;
-        TextView acceso;
+
 
         email = findViewById(R.id.correo);
         pass = findViewById(R.id.contraseña);

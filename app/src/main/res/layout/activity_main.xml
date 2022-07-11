@@ -29,22 +29,6 @@
         android:background="#30ffffff"
         android:padding="20dp" />
 
-    <TextView
-        android:id="@+id/acceso"
-        android:layout_width="86dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Registrate"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña"
-        tools:ignore="MissingConstraints" />
-
     <EditText
         android:id="@+id/contraseña"
         android:layout_width="match_parent"
@@ -108,6 +92,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contraseña"
         android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/acceso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registro" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
