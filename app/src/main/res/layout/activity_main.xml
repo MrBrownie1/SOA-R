@@ -35,18 +35,15 @@
         android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="24dp"
         android:text="Registrate"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:textSize="17sp"
-        app:layout_constraintBottom_toTopOf="@+id/registro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.899"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contraseña"
-        app:layout_constraintVertical_bias="0.4"
-        tools:ignore="MissingConstraints"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"/>
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/contraseña"
@@ -55,37 +52,18 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="16dp"
+        android:background="#30ffffff"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/registro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/correo"
+        android:padding="20dp"
+        android:textColor="@color/white"
         android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        android:background="#30ffffff"
-        android:padding="20dp"/>
-
-    <Button
-        android:id="@+id/registro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="#ED587AE3"
-        android:text="Login"
-        android:textColor="@color/white"
-        app:cornerRadius="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contraseña" />
+        app:layout_constraintTop_toBottomOf="@+id/correo" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -113,6 +91,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logoropa2" />
+
+    <Button
+        android:id="@+id/registro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="#2196F3"
+        android:text="Login"
+        app:cornerRadius="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contraseña"
+        android:textColor="@color/white" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
