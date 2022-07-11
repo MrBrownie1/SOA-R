@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="Registrase"
-        android:text="REGISTRARSE"
+        android:text="Registrarse"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/registro"
         app:layout_constraintEnd_toEndOf="parent"

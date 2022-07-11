@@ -20,8 +20,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.MissingFormatArgumentException;
-import java.util.Timer;
 
 public class pantallaP extends AppCompatActivity {
 
@@ -40,24 +38,25 @@ public class pantallaP extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         name = findViewById(R.id.nombre);
-        correo = findViewById(R.id.correo);
+        correo = findViewById(R.id.email);
         contrasena = findViewById(R.id.password);
         btn_register = findViewById(R.id.btn_registro);
 
-        btn_register.setOnClickListener(new View.OnClickListener(){
-             @Override
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View view){
-                 String nameUser = name.getText().toString().trim();
-                 String correoUser = correo.getText().toString().trim();
-                 String contrasenaUser = contrasena.getText().toString().trim();
+                String nameUser = name.getText().toString().trim();
+                String correoUser = correo.getText().toString().trim();
+                String contrasenaUser = contrasena.getText().toString().trim();
 
-                 if (nameUser.isEmpty() && correoUser.isEmpty() && contrasenaUser.isEmpty()){
-                     Toast.makeText(pantallaP.this, "Complete los datos", Toast.LENGTH_SHORT).show();
-                 }else{
-                     registerUser(nameUser, correoUser, contrasenaUser);
-                 }
-             }
+                if (nameUser.isEmpty() && correoUser.isEmpty() && contrasenaUser.isEmpty()){
+                    Toast.makeText(pantallaP.this, "Complete los datos", Toast.LENGTH_SHORT).show();
+                }else{
+                    registerUser(nameUser, correoUser, contrasenaUser);
+                }
+            }
         });
+
     }
 
     private void registerUser(String nameUser, String correoUser, String contrasenaUser) {
