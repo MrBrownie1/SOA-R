@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(MainActivity.this, pantallaP.class));
+                    startActivity(new Intent(MainActivity.this, registroRopa.class));
                     Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                 }else {
                     Toast.makeText(MainActivity.this, "ERROR", Toast.LENGTH_SHORT).show();
@@ -85,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
     public void Registrase (View view) {
         Intent hom = new Intent(this, pantallaP.class);
         startActivity(hom);
+        autenticacion.signOut();
+        finish();
+        startActivity(new Intent(MainActivity.this,pantallaP.class));
+        //Toast.makeText(MainActivity.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
     }
 
 }
