@@ -55,14 +55,18 @@ public class pantallaP extends AppCompatActivity {
                 if (nameUser.isEmpty() && emailUser.isEmpty() && passUser.isEmpty()){
                     Toast.makeText(pantallaP.this, "Complete los datos", Toast.LENGTH_SHORT).show();
                 }else{
-                    registerUser(nameUser, emailUser, passUser);
-                    mAuth.signOut();
-                    finish();
-                    startActivity(new Intent(pantallaP.this,MainActivity.class));
                     Toast.makeText(pantallaP.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
+                    registerUser(nameUser, emailUser, passUser);
+                    startActivity(new Intent(pantallaP.this,MainActivity.class));
+                    regresar();
                 }
             }
         });
+    }
+    public void regresar(){
+        Intent regresar = new Intent(this, MainActivity.class);
+        startActivity(regresar);
+        finish();
     }
 
     private void registerUser(String nameUser, String emailUser, String passUser) {
@@ -103,8 +107,4 @@ public class pantallaP extends AppCompatActivity {
         onBackPressed();
         return false;
     }
-
-
-
-
 }
