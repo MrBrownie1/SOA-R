@@ -100,14 +100,14 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
         android:text="Registro"
-        android:textSize="30dp"
+        android:textSize="35dp"
         app:layout_constraintBottom_toTopOf="@+id/nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.473"
-        android:fontFamily="serif"/>
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/btn_registro"
@@ -117,6 +117,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_rounded"
+        android:backgroundTint="#2196F3"
         android:onClick="login"
         android:text="Registrarme"
         app:layout_constraintEnd_toEndOf="parent"
