@@ -101,13 +101,12 @@
         android:layout_marginBottom="24dp"
         android:text="Registro"
         android:textSize="35dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/nombre"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.473"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.615" />
 
     <Button
         android:id="@+id/btn_registro"

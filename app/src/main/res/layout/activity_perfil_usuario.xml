@@ -77,7 +77,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="24dp"
         android:text="TextView"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
@@ -188,10 +188,12 @@
         android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="TextView"
         android:visibility="visible"
-        tools:layout_editor_absoluteX="284dp"
-        tools:layout_editor_absoluteY="156dp" />
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
