@@ -104,6 +104,7 @@ public class pantallaP extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
+
         onBackPressed();
         return false;
     }
