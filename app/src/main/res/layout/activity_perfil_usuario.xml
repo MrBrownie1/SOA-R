@@ -23,10 +23,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="266dp"
             android:layout_height="598dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:background="#CDDC39"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -34,124 +34,163 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="16dp"
                 android:text="Tu Perfil"
                 android:textColor="#FFFFFF"
                 android:textSize="34sp"
-                tools:layout_editor_absoluteX="58dp"
-                tools:layout_editor_absoluteY="16dp" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
                 android:layout_width="115dp"
-                android:layout_height="39dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Name"
-                tools:layout_editor_absoluteX="114dp"
-                tools:layout_editor_absoluteY="73dp" />
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName2"
                 android:layout_width="115dp"
-                android:layout_height="39dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="28dp"
+                android:layout_marginBottom="12dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Name"
-                tools:layout_editor_absoluteX="114dp"
-                tools:layout_editor_absoluteY="124dp" />
+                app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName3"
+                app:layout_constraintStart_toEndOf="@+id/textView11" />
 
             <EditText
                 android:id="@+id/editTextTextPersonName3"
                 android:layout_width="115dp"
-                android:layout_height="39dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginBottom="20dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Name"
-                tools:layout_editor_absoluteX="114dp"
-                tools:layout_editor_absoluteY="179dp" />
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintStart_toEndOf="@+id/textView12" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="32dp"
                 android:text="Usuario"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="79dp" />
+                app:layout_constraintBottom_toTopOf="@+id/textView11"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginBottom="40dp"
                 android:text="Correo"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="24dp"
-                tools:layout_editor_absoluteY="133dp" />
+                app:layout_constraintBottom_toTopOf="@+id/textView12"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:layout_marginBottom="35dp"
                 android:text="Clave"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="24dp"
-                tools:layout_editor_absoluteY="190dp" />
+                app:layout_constraintBottom_toTopOf="@+id/button"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="320dp"
                 android:text="Modificar Datos"
-                tools:layout_editor_absoluteX="45dp"
-                tools:layout_editor_absoluteY="242dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="216dp"
                 android:layout_height="277dp"
                 android:background="#FFFFFF"
-                tools:layout_editor_absoluteX="26dp"
-                tools:layout_editor_absoluteY="301dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button">
 
                 <TextView
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="68dp"
                     android:text="Total de donaciones"
                     android:textColor="#CDDC39"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="19dp"
-                    tools:layout_editor_absoluteY="41dp" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginEnd="68dp"
+                    android:text="Total de donaciones"
                     android:textColor="#CDDC39"
                     android:textStyle="bold"
-                    tools:layout_editor_absoluteX="19dp"
-                    tools:layout_editor_absoluteY="151dp"
-                    tools:text="Ultima donacion" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="152dp"
+                    android:layout_marginEnd="56dp"
+                    android:text="Ultima donacion"
+                    android:textColor="#CDDC39"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginBottom="156dp"
                     android:text="0"
                     android:textSize="34sp"
-                    tools:layout_editor_absoluteX="69dp"
-                    tools:layout_editor_absoluteY="68dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
                     android:id="@+id/textView17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:layout_marginBottom="48dp"
                     android:text="NO"
                     android:textSize="34sp"
-                    tools:layout_editor_absoluteX="69dp"
-                    tools:layout_editor_absoluteY="183dp" />
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
