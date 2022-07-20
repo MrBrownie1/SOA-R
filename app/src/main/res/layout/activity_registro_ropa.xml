@@ -8,60 +8,63 @@ android:background="@drawable/fondo"
 android:orientation="vertical"
 tools:context=".registroRopa">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="238dp">
-
-    <ImageView
-        android:id="@+id/logo"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="154dp"
-        app:srcCompat="?attr/actionModePasteDrawable" />
-</LinearLayout>
+        android:layout_height="238dp">
 
-<EditText
-    android:id="@+id/Talla"
-    android:layout_width="287dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:hint="Talla"
-    android:textColorHint="@color/black"
-    android:inputType="text"
-    android:textSize="34sp" />
+    </LinearLayout>
 
-<EditText
-    android:id="@+id/Genero"
-    android:layout_width="286dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:hint="Genero"
-    android:textColorHint="@color/black"
-    android:inputType="numberPassword"
-    android:textSize="34sp" />
-<EditText
-    android:id="@+id/Estado"
-    android:layout_width="287dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:hint="Estado"
-    android:textColorHint="@color/black"
-    android:inputType="text"
-    android:textSize="34sp" />
 
-<EditText
-    android:id="@+id/Tipo"
-    android:layout_width="286dp"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:hint="Tipo"
-    android:textColorHint="@color/black"
-    android:inputType="numberPassword"
-    android:textSize="34sp" />
+    <EditText
+        android:id="@+id/Talla"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Talla"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="@color/black"
+        android:textSize="34sp" />
 
-<Button
-    android:id="@+id/Registrar"
-    android:layout_width="151dp"
-    android:layout_height="73dp"
-    android:layout_gravity="center"
-    android:text="Registrar" />
+
+    <EditText
+        android:id="@+id/Genero"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Genero"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="@color/black"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/Estado"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Estado"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="@color/black"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/Tipo"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:hint="Tipo"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="@color/black"
+        android:textSize="34sp" />
+
+    <Button
+        android:id="@+id/btnRegistrar"
+        android:layout_width="151dp"
+        android:layout_height="73dp"
+        android:layout_gravity="center"
+        android:text="Registrar" />
+
 </LinearLayout>
