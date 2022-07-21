@@ -58,16 +58,15 @@ public class pantallaP extends AppCompatActivity {
                     Toast.makeText(pantallaP.this, "Usuario registrado con éxito", Toast.LENGTH_SHORT).show();
                     registerUser(nameUser, emailUser, passUser);
                     startActivity(new Intent(pantallaP.this,MainActivity.class));
-                    regresar();
                 }
             }
         });
     }
-    public void regresar(){
-        Intent regresar = new Intent(this, MainActivity.class);
+   /*public void regresar(){
+        Intent regresar = new Intent(pantallaP.this, MainActivity.class);
         startActivity(regresar);
         finish();
-    }
+    }*/
 
     private void registerUser(String nameUser, String emailUser, String passUser) {
         mAuth.createUserWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

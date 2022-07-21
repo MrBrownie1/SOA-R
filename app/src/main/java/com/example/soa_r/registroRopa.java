@@ -1,106 +1,111 @@
 package com.example.soa_r;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
-public class registroRopa extends AppCompatActivity implements View.OnClickListener {
 
+
+
+public class registroRopa extends AppCompatActivity {
     EditText txttalla, txtgenero, txtestado, txttipo;
-
     Button btnRegistrar;
 
-    RequestQueue requestQueue;
 
-    private static final String URL1 = "http://192.168.0.174/soa_bd/insertar.php";
+    private FirebaseFirestore mfirestore;
+    private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_ropa);
 
-
-        requestQueue = Volley.newRequestQueue(this);
-
-        //UI
-        initUI();
-
-
-        btnRegistrar.setOnClickListener(this);
-
-    }
-
-    private void initUI() {
-
         txttalla = findViewById(R.id.Talla);
         txtgenero = findViewById(R.id.Genero);
         txtestado = findViewById(R.id.Estado);
-        txttipo =  findViewById(R.id.Tipo);
-        btnRegistrar =  findViewById(R.id.btnRegistrar);
-    }
+        txttipo = findViewById(R.id.Tipo);
+        btnRegistrar = findViewById(R.id.btnRegistrar);
 
-    @Override
-    public void onClick(View v) {
-        int id = v.getId();
 
-        if (id == R.id.btnRegistrar) {
-            String talla = txttalla.getText().toString().trim();
-            String genero = txtgenero.getText().toString().trim();
-            String estado = txtestado.getText().toString().trim();
-            String tipo = txttipo.getText().toString().trim();
+        mfirestore = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
-            createUser(talla, genero, estado, tipo);
 
-        }
-    }
-
-    private void createUser(final String talla, final String genero, final String estado, final String tipo) {
-
-        StringRequest stringRequest = new StringRequest(
-                Request.Method.POST,
-                URL1,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Toast.makeText(registroRopa.this, "Operacion Exitosa", Toast.LENGTH_SHORT).show();
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(registroRopa.this, "Operacion fallida", Toast.LENGTH_SHORT).show();
-                    }
-                }
-        ) {
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
+            public void onClick(View v) {
+                String talla1 = txttalla.getText().toString().trim();
+                String genero1 = txtgenero.getText().toString().trim();
+                String estado1 = txtestado.getText().toString().trim();
+                String tipo1 = txttipo.getText().toString().trim();
 
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("talla", talla);
-                params.put("genero", genero);
-                params.put("estado", estado);
-                params.put("tipo", tipo);
-                return params;
+                if (talla1.isEmpty() && genero1.isEmpty() && estado1.isEmpty() && tipo1.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "ingresa los datos", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    postRopa(talla1, genero1, estado1, tipo1);
+                }
             }
+        });
 
-        };
 
-        requestQueue.add(stringRequest);
+    }//end onCrate
+
+    private void postRopa(String talla1, String genero1, String estado1, String tipo1) {
+
+        DocumentReference id = mfirestore.collection("ropas").document();
+
+        Map<String, Object> ropas = new HashMap<>();
+
+        ropas.put("id", id.getId());
+        ropas.put("Talla", talla1);
+        ropas.put("Genero", genero1);
+        ropas.put("Estado", estado1);
+        ropas.put("Tipo", tipo1);
+
+        mfirestore.collection("ropas").document(id.getId()).set(ropas).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                Toast.makeText(getApplicationContext(), "Creado exitosamente", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(registroRopa.this, MainActivity.class));
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Error al ingresar", Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
+
 }
+

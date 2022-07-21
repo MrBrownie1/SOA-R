@@ -79,13 +79,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    protected void onStart(){
+    /*protected void onStart(){
         super.onStart();
         FirebaseUser usuario = autenticacion.getCurrentUser();
         if (usuario != null){
             startActivity(new Intent(MainActivity.this, pantallaP.class));
             finish();
         }
-    }
+    }*/
 
 }
