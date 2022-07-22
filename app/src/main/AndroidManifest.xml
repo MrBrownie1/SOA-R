@@ -24,9 +24,6 @@
             android:name=".vistaDatos"
             android:exported="false" />
         <activity
-            android:name=".pantallaDatos"
-            android:exported="false" />
-        <activity
             android:name=".perfilUsuario"
             android:exported="false" />
         <activity

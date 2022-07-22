@@ -13,7 +13,7 @@ import java.util.List;
 
 public class vistaDatos extends AppCompatActivity {
 
-    ImageCarousel carousel = findViewById(R.id.carousel);
+
 
     List<CarouselItem> list = new ArrayList<>();
 
@@ -23,11 +23,9 @@ public class vistaDatos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_datos);
 
-        list.add(
-                new CarouselItem(
-                        "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1080"
-                )
-        );
+        ImageCarousel carousel = findViewById(R.id.carousel);
+        list.add(new CarouselItem("https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1080"));
+
         carousel.addData(list);
 
 
