@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser usuario = autenticacion.getCurrentUser();
         if (usuario != null){
-            startActivity(new Intent(MainActivity.this, pantallaP.class));
+            startActivity(new Intent(MainActivity.this, perfilUsuario.class));
             finish();
         }
     }*/
