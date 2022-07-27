@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         registro = findViewById(R.id.registro);
         acceso = findViewById(R.id.reg);
 
+
         acceso.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
