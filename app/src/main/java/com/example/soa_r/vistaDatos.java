@@ -1,5 +1,6 @@
 package com.example.soa_r;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.helper.widget.Carousel;
 
@@ -7,8 +8,14 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.imaginativeworld.whynotimagecarousel.ImageCarousel;
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
@@ -18,6 +25,7 @@ import java.util.List;
 
 public class vistaDatos extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
 
 
     List<CarouselItem> list = new ArrayList<>();
@@ -30,6 +38,9 @@ public class vistaDatos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_datos);
+
+        mAuth = FirebaseAuth.getInstance();
+
 
         ImageCarousel carousel = findViewById(R.id.carousel);
         list.add(new CarouselItem("https://www.ilovepozarica.com/wp-content/uploads/2019/04/624216-N.jpg"));
@@ -49,7 +60,38 @@ public class vistaDatos extends AppCompatActivity {
             startActivity(i);
             Log.d("click", "ok");
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_principal, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                startActivity(new Intent(vistaDatos.this,registroRopa.class));
+                return true;
+            case R.id.item2:
+                startActivity(new Intent(vistaDatos.this,vistaDatos.class));
+                return true;
+            case R.id.item3:
+                startActivity(new Intent(vistaDatos.this,mein.class));
+                return true;
+            case R.id.item4:
+                cerrar();
+            default:
 
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void cerrar(){
+        mAuth.signOut();
+        finish();
+        startActivity(new Intent(vistaDatos.this, MainActivity.class));
+        Toast.makeText(vistaDatos.this, "Haz cerrado sesión satisfactoriamente", Toast.LENGTH_SHORT).show();
     }
 }

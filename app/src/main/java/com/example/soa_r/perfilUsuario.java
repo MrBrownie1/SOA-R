@@ -3,7 +3,11 @@ package com.example.soa_r;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,7 +32,7 @@ public class perfilUsuario extends AppCompatActivity {
     Button btnU;
     EditText contraseña,nombre;
     TextView nDonacion,fechaU;
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
     int contador = 0;
     private FirebaseFirestore firebaseFirestore;
     private StorageReference nStorageRef;
@@ -38,6 +42,7 @@ public class perfilUsuario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_usuario);
 
+        mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
 
@@ -126,6 +131,38 @@ public class perfilUsuario extends AppCompatActivity {
         super.onStart();
         getUser(id);
         getDonacion();
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_principal, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                startActivity(new Intent(perfilUsuario.this,registroRopa.class));
+                return true;
+            case R.id.item2:
+                startActivity(new Intent(perfilUsuario.this,vistaDatos.class));
+                return true;
+            case R.id.item3:
+                startActivity(new Intent(perfilUsuario.this,mein.class));
+                return true;
+            case R.id.item4:
+                cerrar();
+            default:
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void cerrar(){
+        mAuth.signOut();
+        finish();
+        startActivity(new Intent(perfilUsuario.this, MainActivity.class));
+        Toast.makeText(perfilUsuario.this, "Haz cerrado sesión satisfactoriamente", Toast.LENGTH_SHORT).show();
     }
 }
 

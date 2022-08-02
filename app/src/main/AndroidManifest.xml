@@ -14,27 +14,32 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SOAR"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".mein"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SOAR"/>
         <activity
             android:name=".vistaDatos"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SOAR"/>
         <activity
             android:name=".perfilUsuario"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SOAR"/>
         <activity
             android:name=".registroRopa"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SOAR"/>
         <activity
             android:name=".pantallaP"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.SOAR2"/>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.SOAR2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
