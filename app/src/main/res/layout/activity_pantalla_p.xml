@@ -117,7 +117,6 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/button_rounded"
         android:backgroundTint="#2196F3"
-        android:onClick="login"
         android:text="Registrarme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -33,8 +33,6 @@ public class pantallaP extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla_p);
-        this.setTitle("Registro");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
