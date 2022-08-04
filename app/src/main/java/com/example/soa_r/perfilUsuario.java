@@ -46,11 +46,11 @@ public class perfilUsuario extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
 
 
-
+                nDonacion=findViewById(R.id.txtCantidad);
                 nombre=findViewById(R.id.txtUsuario);
                 contraseña=findViewById(R.id.txtClave);
                 btnU = findViewById(R.id.btnUpdate);
-                fechaU = findViewById(R.id.txtDate);
+
 
                 btnU.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -93,9 +93,11 @@ public class perfilUsuario extends AppCompatActivity {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         String nameU = documentSnapshot.getString("name");
                         String pswUR = documentSnapshot.getString("password");
+                        String cantidadD = documentSnapshot.getString("cantidad");
                         /*Date fecha = documentSnapshot.getDate("email");*/
                         nombre.setText(nameU);
                         contraseña.setText(pswUR);
+                        nDonacion.setText(cantidadD);
                         /*SimpleDateFormat simpleDate =  new SimpleDateFormat("dd/MM/yyyy");
                         String strDt = simpleDate.format(fecha);
                         fechaU.setText(strDt);*/
@@ -109,28 +111,13 @@ public class perfilUsuario extends AppCompatActivity {
                 });
 
             }
-    private void getDonacion(){
-        nDonacion = findViewById(R.id.txtCantidad);
-        firebaseFirestore.collection("ropas").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                contador = queryDocumentSnapshots.size();
-                nDonacion.setText(Integer.toString(contador));
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "Error al obtener numero", Toast.LENGTH_LONG).show();
-            }
-        });
 
-    }
 
     @Override
     protected void onStart() {
         super.onStart();
         getUser(id);
-        getDonacion();
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -153,6 +140,10 @@ public class perfilUsuario extends AppCompatActivity {
                 return true;
             case R.id.item4:
                 cerrar();
+
+            case R.id.item5:
+                startActivity(new Intent(perfilUsuario.this,perfilUsuario.class));
+                return true;
             default:
 
         }

@@ -71,11 +71,13 @@ public class pantallaP extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 String id = mAuth.getCurrentUser().getUid();
+                String cantidad = "0";
                 Map<String, Object> map = new HashMap<>();
                 map.put("id", id);
                 map.put("name", nameUser);
                 map.put("email", emailUser);
                 map.put("password", passUser);
+                map.put("cantidad",cantidad);
 
                 mFirestore.collection("user").document(id).set(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

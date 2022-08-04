@@ -82,6 +82,9 @@ public class vistaDatos extends AppCompatActivity {
                 return true;
             case R.id.item4:
                 cerrar();
+            case R.id.item5:
+                startActivity(new Intent(vistaDatos.this,perfilUsuario.class));
+                return true;
             default:
 
         }

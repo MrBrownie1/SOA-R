@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +29,7 @@ public class registroRopa extends AppCompatActivity {
 
     private FirebaseFirestore mfirestore;
     private FirebaseAuth mAuth;
-
+    String id = FirebaseAuth.getInstance().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class registroRopa extends AppCompatActivity {
 
                 } else {
                     postRopa(talla1, genero1, estado1, tipo1);
+                    updateUser(id);
                 }
             }
         });
@@ -92,6 +94,39 @@ public class registroRopa extends AppCompatActivity {
         });
 
     }
+    private void updateUser(String id){
+        mfirestore.collection("user").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Integer cantidad = Integer.valueOf(documentSnapshot.getString("cantidad"));
+                Toast.makeText(registroRopa.this, "Correcto", Toast.LENGTH_SHORT).show();
+                cantidad = cantidad + 1;
+                String cantidadS = Integer.toString(cantidad);
+                Map<String, Object> map = new HashMap<>();
+                map.put("cantidad",cantidadS);
+                mfirestore.collection("user").document(id).update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(getApplicationContext(), "Actualizado correctamente", Toast.LENGTH_LONG).show();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "Error al actualizar", Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Error al obtener datos", Toast.LENGTH_LONG).show();
+            }
+        });
+
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -113,6 +148,9 @@ public class registroRopa extends AppCompatActivity {
                 return true;
             case R.id.item4:
                 cerrar();
+            case R.id.item5:
+                startActivity(new Intent(registroRopa.this,perfilUsuario.class));
+                return true;
             default:
 
         }
@@ -125,4 +163,3 @@ public class registroRopa extends AppCompatActivity {
         Toast.makeText(registroRopa.this, "Haz cerrado sesión satisfactoriamente", Toast.LENGTH_SHORT).show();
     }
 }
-

@@ -36,8 +36,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif-black"
                 android:text="Tu Perfil"
-                android:textColor="#FFFFFF"
+                android:textColor="#4D8ABA"
                 android:textSize="34sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -94,13 +95,14 @@
 
             <Button
                 android:id="@+id/btnUpdate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="320dp"
+                android:layout_width="189dp"
+                android:layout_height="62dp"
+                android:layout_marginBottom="308dp"
                 android:text="Modificar Datos"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.512"
+                app:layout_constraintHorizontal_bias="0.504"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -114,12 +116,13 @@
 
                 <TextView
                     android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="164dp"
+                    android:layout_height="65dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginEnd="64dp"
+                    android:layout_marginEnd="28dp"
                     android:text="Total de donaciones"
                     android:textColor="#CDDC39"
+                    android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -141,24 +144,13 @@
                     android:id="@+id/txtCantidad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="84dp"
-                    android:layout_marginBottom="104dp"
+                    android:layout_marginStart="88dp"
+                    android:layout_marginBottom="36dp"
                     android:text="0"
-                    android:textSize="34sp"
+                    android:textSize="60sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
-                <TextView
-                    android:id="@+id/txtDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="56dp"
-                    android:layout_marginBottom="48dp"
-                    android:text="NO"
-                    android:textSize="34sp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
