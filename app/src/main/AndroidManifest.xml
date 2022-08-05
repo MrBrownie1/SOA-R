@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.soa_r">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -19,23 +20,23 @@
         <activity
             android:name=".mein"
             android:exported="false"
-            android:theme="@style/Theme.SOAR"/>
+            android:theme="@style/Theme.SOAR" />
         <activity
             android:name=".vistaDatos"
             android:exported="false"
-            android:theme="@style/Theme.SOAR"/>
+            android:theme="@style/Theme.SOAR" />
         <activity
             android:name=".perfilUsuario"
             android:exported="false"
-            android:theme="@style/Theme.SOAR"/>
+            android:theme="@style/Theme.SOAR" />
         <activity
             android:name=".registroRopa"
             android:exported="false"
-            android:theme="@style/Theme.SOAR"/>
+            android:theme="@style/Theme.SOAR" />
         <activity
             android:name=".pantallaP"
             android:exported="false"
-            android:theme="@style/Theme.SOAR2"/>
+            android:theme="@style/Theme.SOAR2" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class registroRopa extends AppCompatActivity {
     EditText txttalla, txtgenero, txtestado, txttipo;
-    Button btnRegistrar;
+    Button btnRegistrar, imen;
 
     private FirebaseFirestore mfirestore;
     private FirebaseAuth mAuth;
@@ -40,11 +40,10 @@ public class registroRopa extends AppCompatActivity {
         txtestado = findViewById(R.id.Estado);
         txttipo = findViewById(R.id.Tipo);
         btnRegistrar = findViewById(R.id.btnRegistrar);
-
+        imen = findViewById(R.id.imen1);
 
         mfirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
-
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +62,12 @@ public class registroRopa extends AppCompatActivity {
             }
         });
 
+      /* imen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(registroRopa.this, ropa_imagenes.class));
+            }
+        });*/
 
     }//end onCrate
 
@@ -117,12 +122,17 @@ public class registroRopa extends AppCompatActivity {
 
         }
         return super.onOptionsItemSelected(item);
+
+
     }
+
     public void cerrar(){
         mAuth.signOut();
         finish();
         startActivity(new Intent(registroRopa.this, MainActivity.class));
         Toast.makeText(registroRopa.this, "Haz cerrado sesión satisfactoriamente", Toast.LENGTH_SHORT).show();
     }
+
+
 }
 
