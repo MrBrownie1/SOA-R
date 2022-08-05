@@ -44,6 +44,9 @@ public class mein extends AppCompatActivity {
             case R.id.item4:
                 cerrar();
                 return true;
+            case R.id.item5:
+                startActivity(new Intent(mein.this,perfilUsuario.class));
+                return true;
             default:
 
         }
