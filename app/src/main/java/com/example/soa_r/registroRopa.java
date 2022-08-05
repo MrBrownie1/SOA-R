@@ -46,6 +46,7 @@ public class registroRopa extends AppCompatActivity {
         mfirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
+
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,12 +65,12 @@ public class registroRopa extends AppCompatActivity {
             }
         });
 
-      /* imen.setOnClickListener(new View.OnClickListener() {
+       imen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(registroRopa.this, ropa_imagenes.class));
+                startActivity(new Intent(registroRopa.this, AgregarImg.class));
             }
-        });*/
+        });
 
     }//end onCrate
 
@@ -170,6 +171,9 @@ public class registroRopa extends AppCompatActivity {
         startActivity(new Intent(registroRopa.this, MainActivity.class));
         Toast.makeText(registroRopa.this, "Haz cerrado sesión satisfactoriamente", Toast.LENGTH_SHORT).show();
     }
-
+    /*public void Agregar(View view){
+        Intent siguiente1 = new Intent(this, AgregarImg.class);
+        startActivity(siguiente1);
+    }*/
 
 }

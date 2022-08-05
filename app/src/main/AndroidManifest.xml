@@ -18,6 +18,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".AgregarImg"
+            android:exported="false"
+            android:theme="@style/Theme.SOAR"/>
+        <activity
             android:name=".mein"
             android:exported="false"
             android:theme="@style/Theme.SOAR" />
