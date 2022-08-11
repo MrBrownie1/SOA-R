@@ -45,25 +45,24 @@ public class MainAdmin extends AppCompatActivity {
                     loginAdmin(emailAdmin, passAdmin);
                 }
             }
-
-            private void loginAdmin(String emailAdmin, String passAdmin) {
-                mAucth.signInWithEmailAndPassword(emailAdmin,passAdmin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()){
-                            finish();
-                            startActivity(new Intent(MainAdmin.this,MainActivity.class));
-                            Toast.makeText(MainAdmin.this,"Bienvenido",Toast.LENGTH_SHORT).show();
-                        }else{
-                            Toast.makeText(MainAdmin.this,"ERROR",Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(MainAdmin.this,"ERROR al iniciar SESION",Toast.LENGTH_SHORT).show();
-                    }
-                });
+        });
+    }
+    private void loginAdmin(String emailAdmin, String passAdmin) {
+        mAucth.signInWithEmailAndPassword(emailAdmin,passAdmin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    finish();
+                    startActivity(new Intent(MainAdmin.this,mein.class));
+                    Toast.makeText(MainAdmin.this,"Bienvenido",Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainAdmin.this,"ERROR",Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(MainAdmin.this,"ERROR al iniciar SESION",Toast.LENGTH_SHORT).show();
             }
         });
     }

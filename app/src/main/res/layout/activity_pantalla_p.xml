@@ -8,7 +8,7 @@
     tools:context=".pantallaP">
 
     <EditText
-        android:id="@+id/nombre"
+        android:id="@+id/Tipo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -41,7 +41,7 @@
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintTop_toBottomOf="@+id/Tipo" />
 
     <EditText
         android:id="@+id/password"
@@ -102,7 +102,7 @@
         android:text="Registro"
         android:textSize="35dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/nombre"
+        app:layout_constraintBottom_toTopOf="@+id/Tipo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"

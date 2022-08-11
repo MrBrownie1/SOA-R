@@ -50,7 +50,7 @@ public class usuarioAdapter extends FirestoreRecyclerAdapter<usuario, usuarioAda
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.nombre);
+            name = itemView.findViewById(R.id.Tipo);
             email = itemView.findViewById(R.id.correo);
             password = itemView.findViewById(R.id.password);
         }

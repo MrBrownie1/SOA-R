@@ -37,7 +37,7 @@ public class pantallaP extends AppCompatActivity {
         mFirestore = FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
-        name = findViewById(R.id.nombre);
+        name = findViewById(R.id.Tipo);
         email = findViewById(R.id.correo);
         password = findViewById(R.id.password);
         btn_register = findViewById(R.id.btn_registro);

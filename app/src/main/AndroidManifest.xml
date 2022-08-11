@@ -49,7 +49,7 @@
         <activity
             android:name=".mein"
             android:exported="false"
-            android:theme="@style/Theme.SOAR" />
+            android:theme="@style/Theme.SOAR2" />
         <activity
             android:name=".vistaDatos"
             android:exported="false"
