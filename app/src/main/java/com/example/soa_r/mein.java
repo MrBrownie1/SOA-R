@@ -37,7 +37,7 @@ public class mein extends AppCompatActivity {
 
         FirestoreRecyclerOptions<ropas> firestoreRecyclerOptions = new FirestoreRecyclerOptions.Builder<ropas>().setQuery(query, ropas.class).build();
 
-        mAdapter = new ropasAdapter(firestoreRecyclerOptions);
+        mAdapter = new ropasAdapter(firestoreRecyclerOptions,this);
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);
     }

@@ -19,9 +19,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".Create_Ropa"
+            android:exported="false"
+            android:theme="@style/Theme.SOAR2" />
+        <activity
             android:name=".MainAdmin"
             android:exported="false"
-            android:theme="@style/Theme.SOAR2"/>
+            android:theme="@style/Theme.SOAR2" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -40,8 +44,8 @@
         <activity
             android:name=".MapsActivity"
             android:exported="false"
-            android:theme="@style/Theme.SOAR"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:theme="@style/Theme.SOAR" />
         <activity
             android:name=".AgregarImg"
             android:exported="false"
