@@ -136,7 +136,7 @@ public class perfilUsuario extends AppCompatActivity {
                 startActivity(new Intent(perfilUsuario.this,vistaDatos.class));
                 return true;
             case R.id.item3:
-                startActivity(new Intent(perfilUsuario.this,mein.class));
+                startActivity(new Intent(perfilUsuario.this,VerRopa.class));
                 return true;
             case R.id.item4:
                 cerrar();

@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.soa_r.R;
+import com.example.soa_r.agregar_admin;
 import com.example.soa_r.model.ropas;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -49,7 +50,14 @@ public class ropasAdapter extends FirestoreRecyclerAdapter<ropas, ropasAdapter.V
         viewHolder.waist.setText(ropas.getTalla());
         viewHolder.condition.setText(ropas.getEstado());
 
-
+        viewHolder.btn_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(activity, agregar_admin.class);
+                i.putExtra("id_articulo", id);
+                activity.startActivity(i);
+            }
+        });
 
         viewHolder.btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,11 +87,13 @@ public class ropasAdapter extends FirestoreRecyclerAdapter<ropas, ropasAdapter.V
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_ropas_single, parent, false);
         return new ViewHolder(v);
+
+
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView type, gener, waist, condition;
-        ImageView btn_delete, btn_editar;
+        ImageView btn_delete, btn_edit;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -93,7 +103,7 @@ public class ropasAdapter extends FirestoreRecyclerAdapter<ropas, ropasAdapter.V
             waist = itemView.findViewById(R.id.Talla);
             condition = itemView.findViewById(R.id.Estado);
             btn_delete = itemView.findViewById(R.id.btn_eliminar);
-            btn_editar = itemView.findViewById(R.id.btn_editar);
+            btn_edit = itemView.findViewById(R.id.btn_editar);
         }
     }
 }

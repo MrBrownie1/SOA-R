@@ -60,7 +60,7 @@ public class registroRopa extends AppCompatActivity {
 
                 } else {
                     postRopa(talla1, genero1, estado1, tipo1);
-                    updateUser(id);
+                   // updateUser(id);
                 }
             }
         });
@@ -90,7 +90,7 @@ public class registroRopa extends AppCompatActivity {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(getApplicationContext(), "Creado exitosamente", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(registroRopa.this, MainActivity.class));
+                startActivity(new Intent(registroRopa.this, VerRopa.class));
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -100,7 +100,7 @@ public class registroRopa extends AppCompatActivity {
         });
 
     }
-    private void updateUser(String id){
+   /* private void updateUser(String id){
         mfirestore.collection("user").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -131,7 +131,7 @@ public class registroRopa extends AppCompatActivity {
             }
         });
 
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -150,12 +150,12 @@ public class registroRopa extends AppCompatActivity {
                 startActivity(new Intent(registroRopa.this,vistaDatos.class));
                 return true;
             case R.id.item3:
-                startActivity(new Intent(registroRopa.this,mein.class));
+                startActivity(new Intent(registroRopa.this,VerRopa.class));
                 return true;
             case R.id.item4:
                 cerrar();
             case R.id.item5:
-                startActivity(new Intent(registroRopa.this,perfilUsuario.class));
+                startActivity(new Intent(registroRopa.this,VerRopa.class));
                 return true;
             default:
 

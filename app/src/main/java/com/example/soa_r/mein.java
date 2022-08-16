@@ -1,22 +1,17 @@
 package com.example.soa_r;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.soa_r.adapter.ropasAdapter;
 import com.example.soa_r.model.ropas;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -31,7 +26,7 @@ public class mein extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mein);
         mFirestore = FirebaseFirestore.getInstance();
-        mRecycler = findViewById(R.id.recyclerViewSingle);
+        mRecycler = findViewById(R.id.recyclerViewSingle2);
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
         Query query = mFirestore.collection("ropas");
 
@@ -52,5 +47,14 @@ public class mein extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         mAdapter.startListening();
+    }
+
+    public void Registrar(View view){
+        Intent ir = new Intent(this, agregar_admin.class);
+        startActivity(ir);
+    }
+    public void Salir(View view){
+        Intent ir = new Intent(this, MainAdmin.class);
+        startActivity(ir);
     }
 }

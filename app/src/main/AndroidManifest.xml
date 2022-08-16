@@ -19,7 +19,11 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".Create_Ropa"
+            android:name=".VerRopa"
+            android:exported="false"
+            android:theme="@style/Theme.SOAR"/>
+        <activity
+            android:name=".agregar_admin"
             android:exported="false"
             android:theme="@style/Theme.SOAR2" />
         <activity

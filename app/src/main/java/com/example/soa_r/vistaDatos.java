@@ -78,7 +78,7 @@ public class vistaDatos extends AppCompatActivity {
                 startActivity(new Intent(vistaDatos.this,vistaDatos.class));
                 return true;
             case R.id.item3:
-                startActivity(new Intent(vistaDatos.this,mein.class));
+                startActivity(new Intent(vistaDatos.this,VerRopa.class));
                 return true;
             case R.id.item4:
                 cerrar();
